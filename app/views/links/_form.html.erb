@@ -1,0 +1,20 @@
+
+<%= form_with(model: @link, url: create_link_path, class: "w-full flex items-end",  data: { controller: "form" }, id: "link-form") do |form| %>
+    <div class="relative h-12 w-5/6 mr-6">
+        <%= form.text_field :original_url,
+            class: "border-none peer h-full w-full border-b border-blue-gray-200 bg-transparent pt-4 pb-1.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200 focus:border-pink-500 focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50",
+            style: 'border-bottom: 1px solid black; box-shadow: none;',
+            placeholder:" "
+        %>
+        <label class="after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-500 transition-all after:absolute after:-bottom-1.5 after:block after:w-full after:scale-x-0 after:border-b-2 after:border-pink-500 after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-placeholder-shown:text-blue-gray-500 peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:after:scale-x-100 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+            Enter Link here
+        </label>
+    </div>
+
+    <div>
+        <%= button_tag type: 'submit', class: "relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-white rounded hover:bg-white group border border-gray-100", data: { action: 'click->form#test' } do %>
+            <span class="w-48 h-48 rounded rotate-[-40deg] bg-pink-600 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+            <span class="relative w-full text-left text-black transition-colors duration-300 ease-in-out group-hover:text-white">Generate</span>
+        <% end %>
+    </div>
+<% end %>
